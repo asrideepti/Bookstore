@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+button.accordion {
+    background-color: aquamarine;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 75%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 12px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: darkcyan;
+}
+
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+input[type=text], input[type=password] , input[type=email]
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+	border-radius: 10px;
+    box-sizing: border-box;
+}
+textarea
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+	border-radius: 10px;
+    box-sizing: border-box;
+}
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+  
+    border: 2%;
+    cursor: pointer;
+    width: 50%;
+	}
+</style>
+<script type="text/javascript">
+function payDet()
+{
+	var cnam=new String(document.getElementById("cardname").value);
+	var cnum=new String(document.getElementById("cardnum").value);
+	var cvv=new String(document.getElementById("cvv").value);
+	var exp=new String(document.getElementById("expiry").value);
+	var numpattern=/[0-9]{16}/;
+	var exppattern=/[0-9]{4}/;
+	var cvvpattern=/[0-9]{3}/;
+	
+	if(cnam=="" || cnum=="" || cvv=="" || exp=="")
+	{
+		alert("Please fill the required fields!!");
+		return false;
+		
+	}
+	
+	
+	else if(!(cnum.match(numpattern)))
+	{
+		alert("Enter valid cardnumber");
+		 
+	}
+	else if(!(exp.match(exppattern)))
+	{
+		alert("Enter valid expiry date");
+		 
+	}
+	else if(!(cvv.match(cvvpattern)))
+	{
+		alert("Enter valid cvv");
+		 
+	}
+	
+}
+</script>
+
+</head>
+<body>
+
+<h1 align="center"><font color="orangered">Enter your payment option</font></h1>
+
+<img src="rupee.png" style="width:100px;height:150px">
+ &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button class="accordion" align="center"><h2>Debit/Credit Card</h2></button>
+<div class="panel">
+<table align="center">
+ 
+<tr><td><label><b><font size=5 color="darkmagenta"> Card Number </font></b></label></td>
+    <td><input type="text" placeholder="Enter card number" size="50" id="cardnum" name="cnum" required></td></tr>
+
+	<tr><td><label><b><font size=5 color="darkmagenta"> Name on card </font></b></label></td>
+    <td><input type="text" placeholder="Enter name on card" id="cardname" name="cname" required></td></tr>
+	
+	<tr><td align="center"><label><b><font size=5 color="darkmagenta"  > Expiry </font></b></label></td>
+    <td><input type="text" placeholder="MM/YY" id="expiry" name="expiry" required></td> 
+	
+	<td><label><b><font size=5  color="darkmagenta" > CVV </font></b></label></td>
+    <td><input type="text" placeholder="CVV" size="3" id="cvv" name="cvv" required></td></tr>
+	
+	<tr><td></td><td align="center"><button type="submit" onclick="return payDet()">Proceed</button></td></tr>
+</table>
+</div>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button class="accordion" align="center"><h2>Net Banking</h2></button>
+<div class="panel">
+<table align="center">
+ 
+<tr><td align="left"><input type="radio" name="bank" value="sbi"><img src="sbi.png" style="width:100px;height:40px"></td><td></td>
+	<td align="left"><input type="radio" name="bank" value="icici"><img src="icici.png" style="width:100px;height:40px"></td></tr>
+<tr><td align="left"><input type="radio" name="bank" value="andhra"><img src="ab.png" style="width:150px;height:30px"></td><td></td>
+	<td align="left"><input type="radio" name="bank" value="syndicate"><img src="syndicate.png" style="width:120px;height:40px"></td></tr>
+<tr><td align="left"><input type="radio" name="bank" value="hdfc"><img src="hdfc.png" style="width:120px;height:40px"></td><td></td>
+	<td align="left"><input type="radio" name="bank" value="idbi"><img src="idbi.png" style="width:120px;height:40px"></td></tr>
+<tr><td align="left"><input type="radio" name="bank" value="axis"><img src="axis.png" style="width:100px;height:40px"></td><td></td>
+	<td align="left"><input type="radio" name="bank" value="punjab"><img src="pn.png" style="width:120px;height:40px"></td></tr>
+
+	<tr><td></td><td align="center" width="40%"><button type="submit">Proceed</button></td><td></td></tr>
+</table>
+</div>
+
+&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp <button class="accordion"><h2>Cash on Delivery</h2></button>
+<div class="panel">
+<table align="center">
+<tr><td><label><b><font size=5 color="darkmagenta"> Enter delivery address </font></b></label></td>
+<td><textarea rows="5" cols="50" name="address" wrap="hard" placeholder="Enter address"></textarea></td></tr>
+<tr><td></td><td align="center"><button type="submit">Proceed</button></td></tr>
+</table>
+</div>
+<br><br><br><br>
+<img src="pay1.png" align="right">
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  }
+}
+</script>
+
+</body>
+</html>

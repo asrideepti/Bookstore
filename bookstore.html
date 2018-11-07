@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<style>
+.mySlides
+{
+width:500px; image-resolution:1000dpi; 
+}
+ a:link
+ {
+   color:white;
+   background-color:transparent;
+   text-decoration:none;
+ }
+ a:visited
+ {
+   color:cyan;
+   background-color:transparent;
+   text-decoration:none;
+ }
+ a:hover
+ {
+   color:red;
+   background-color:transparent;
+   text-decoration:none;
+ }
+ a:active
+ {
+   color:yellow;
+   background-color:transparent;
+   text-decoration:none;
+ } 
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+</style>
+<body style="background-color:azure">
+
+<h1 align="center" style="color:blueviolet"><i>Book_your_book.com</i></h1> <hr  size=5px color="forestgreen">
+<marquee><h2 style="color:crimson">Welcome to our online bookstore</h2></marquee>
+<h3 style="background-color:black;color:white;" align="center">
+<ul>
+  <li><a class="active" href="register.html">Register</a></li>
+  <li><a href="login.html">Login</a></li>
+  <li style="float:right"><a href="aboutus.html">About</a></li>
+  <li style="float:right"><a href="feedback.html">Feedback</a></li>
+</ul>
+</h3>
+<table>
+<section>
+    <tr><td width="150"></td><td align="center"><img class="mySlides" src="quote1.jpg" style="width:1000px;height:500px">
+	<img class="mySlides" src="img1.jpg" style="width:1000px;height:500px">
+	<img class="mySlides" src="quote2.jpg" style="width:900px;height:500px">
+    <img class="mySlides" src="img2.jpg" style="width:1000px;height:500px"></td></tr>
+</section>
+</table>
+
+
+<br><br>
+
+<h3  align="center">
+
+
+<a href='www.facebook.com/bookyourbook' title="Facebook"><img src='fb1.jpg' style='width:50px;height:50px'></a>&nbsp &nbsp &nbsp &nbsp <a href='https://accounts.google.com/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/mail/&ss=1&scc=1&ltmpl=default&ltmplcache=2&emr=1&osid=1' title="www.onlinebooks@bookyourbook.in"><img src='gmail.png' style='width:50px;height:50px'></a>&nbsp &nbsp &nbsp &nbsp <a href='https://twitter.com/bookyourbook' title="Twitter"><img src='twitter.png' style='width:50px;height:50px'></a>&nbsp &nbsp &nbsp &nbsp<a href='#' title='1800 2323 2424'><img src='call.jpg' style='width:50px;height:50px'></a>&nbsp &nbsp &nbsp &nbsp<a href='#' title='6-3-354/1, Shop No. A/B, Nagarjuna Circle Road, Road No.1, Punjagutta, Hyderabad, Telangana Zipcode-500034'><img src='loc.jpg' style='width:50px;height:50px'></a>
+
+</h3> 
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) 
+	{
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000);
+}
+</script>
+				
+
+
+					
+</body>
+</html>

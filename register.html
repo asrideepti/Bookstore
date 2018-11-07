@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+body{
+background:url("rimg2.jpg");
+background-size:cover;
+}
+
+form {
+    border: 3px solid #f1f1f1;
+}
+
+input[type=text], input[type=password] , input[type=email] {
+    width: 150%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+	border-radius: 10px;
+    box-sizing: border-box;
+}
+textarea
+{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+	border-radius: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+  
+    border: 2%;
+    cursor: pointer;
+    width: 75%;
+}
+
+.cancelbtn {
+    width: 150%;
+    padding: 10px 18px;
+	color:white;
+    
+    cursor: pointer;
+    background-color: #f44336;
+}
+
+button:hover{
+background-color:lightskyblue;
+}
+
+div {
+    margin: 0 300px ;
+    border-radius: 5px;
+    background-color: cornsilk;
+     padding: 20px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+}
+</style>
+<script type="text/javascript">
+function uProfile()
+{
+	var un=new String(document.getElementById("uname").value);
+	var pd=new String(document.getElementById("psw").value);
+	var npd=new String(document.getElementById("npsw").value);
+	var mob=new String(document.getElementById("num").value);
+	var mail=new String(document.getElementById("email").value);
+	var mobpattern=/[0-9]{10}/;
+	var mailpattern=/(?=.*[@][a-z A-Z])/;
+	if(!(pd.match(npd)))
+	{
+		alert("Passwords dont match");
+		return false;
+	}
+	if(un=="")
+	{
+		alert("Enter Username");
+		return false;
+	}
+	if(pd=="")
+	{
+		alert("Enter Password");
+		return false;
+	}
+	if(npd=="")
+	{
+		alert("Re-Enter Password");
+		return false;
+	}
+	if(pd.length<8)
+	{
+		alert("Password length should be greater than 7!!");
+		return false;
+	}
+	if(un.length<6)
+	{
+		alert("Username length should be greater than 6!!");
+		return false;
+	}
+	if(!(mail.match(mailpattern)))
+	{
+		alert("Enter valid mail-id");
+		return false;
+	}
+	if(!(mob.match(mobpattern)))
+	{
+		alert("Enter valid mobile number");
+		return false;
+	}
+	else
+	{
+		alert("Successfully Registered.Login to continue shopping.");<!--document.write("<html><h3>Successfully Registered!!!</h3><table align=center><tr><td><a href=bookstore.html>Go To Homepage</a></td></tr><tr><td><a href=log.html>Login</a></td></tr></table></html>");-->
+		
+	}
+}
+</script>
+
+<body>
+<form action="Registerdb.com" method="post">
+<div><table align="center">
+<tr><td><img src="regimg3.png"></td></tr>
+</table>
+
+<!--<h2 align=center><font face="algerian" size=7 color="forestgreen">Registration Form</font></h2>-->
+
+  <!--<table><tr>
+  <td ><img src="regimg2.jpg" ></td><td></td><td></td><td></td><td></td><td></td><td></td>
+   <td><font face="arial" size="7" color="forestgreen">It's free and always will be!!</font></td></tr>
+   </table>-->
+<table align="center">
+ 
+<tr><td><label><b><font size=5 color="firebrick"> Firstname </font></b></label></td>
+    <td><input type="text" placeholder="Enter Firstname" id="fname" name="fname" required></td></tr>
+
+	<tr><td><label><b><font size=5 color="firebrick"> Lastname </font></b></label></td>
+    <td><input type="text" placeholder="Enter Lastname" id="lname" name="lname"></td></tr>
+	
+	<tr><td><label><b><font size=5 color="firebrick"  > Email </font></b></label></td>
+    <td><input type="email" placeholder="Enter email" id="email" name="email"></td></tr>
+	
+	<tr><td><label><b><font size=5  color="firebrick" > Mobile </font></b></label></td>
+    <td><input type="text" placeholder="Enter mobile" id="num" name="num" required></td></tr>
+
+	<tr><td><label><b><font size=5 color="firebrick"  > Gender </font></b></label></td>
+	<td><input type="radio" name="gender" value="male" size="10"><font size=5 color="firebrick" >Male</font>
+</td><td><input type="radio" name="gender" value="Female" size="10"><font size=5 color="firebrick">Female</font></td></tr>
+	
+	 <tr><td><label><b><font size=5 color="firebrick"  > Address </font></b></label></td>
+     <td><textarea rows=4 placeholder="Enter Address" name="address"></textarea></td></tr>
+	 <tr><td><label><b><font size=5 color="firebrick"> City </font></b></label></td>
+    <td><input type="text" placeholder="Enter city" id="city" name="city" required></td></tr>
+	
+    <tr><td><label><b><font size=5   color="firebrick"> Username </font></b></label></td>
+    <td><input type="text" placeholder="Enter Username" id="uname" name="uname" required></td></tr>
+    <tr><td><label><b><font size=5   color="firebrick"> Password </font></b></label>
+    <td><input type="password" placeholder="Enter Password" id="psw" name="psw" required></td></tr>
+	
+	 <tr><td><label><b><font size=5  color="firebrick" > Re-enter Password </font></b></label></td>
+   <td><input type="password" placeholder="Enter Password" id="npsw" required></td></tr>
+
+ 
+    <tr><td></td><td><button type="submit" onclick="return uProfile()">Register</button></td>
+    <!--<tr><td><input type="checkbox" checked="checked"> Remember me
+ </td></tr>--><td><form action="bookstore.html" method="post">
+
+    <button class="cancelbtn">Cancel</button>
+    <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+
+  </form></td></tr>
+  
+    
+ 
+ </table>
+
+    <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
+  </div>
+
+
+</form>
+</body>
+</head>
+
+</html>

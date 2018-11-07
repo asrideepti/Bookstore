@@ -1,0 +1,30 @@
+<html>
+<br><br><body style="background-color:azure">
+<script type="text/javascript">
+function uProfile()
+{
+	var un=new String(document.getElementById("uname").value);
+	var sg=new String(document.getElementById("suggestions").value);
+	
+	
+	if(un=="" || sg=="")
+	{
+		alert("Please fill the fields");
+		return false;
+	}
+}
+</script>
+<form action="feedres.html">
+<h1 align="center" style="color:blue">We value your feedback!!</h1>
+<table align="center">
+<tr><td><font size="5">
+<i>"If you find any faults or bugs in our website ,then you are always welcome to give us your suggestions...."</i></font>
+</td></tr></table>
+<br><br>
+<table align="center"><tr><td align="center" style="color:DarkOrchid"><font size=4><b>Enter Name:</b></font></td><td><input type="text" name="uname" required></td></tr>
+<tr><td align="center" style="color:DarkOrchid"><font size=4><b>Enter Suggestions/Feedback:</b></font></td><td><textarea rows=10 cols=50 name="suggestions" required></textarea></td></tr></table>
+<table align="center">
+<tr><td align="center"><input type="submit" value="submit" onclick="return uProfile()"></tr></td>
+</table><br><br>
+</form></body>
+</html>

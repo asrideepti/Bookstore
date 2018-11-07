@@ -1,0 +1,20 @@
+<web-app>
+	<servlet>
+		<servlet-name>Registerdb</servlet-name>
+		<servlet-class>Registerdb</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Registerdb</servlet-name>
+		<url-pattern>/Registerdb.com</url-pattern>
+	</servlet-mapping>	
+		<servlet>
+		<servlet-name>Logindb</servlet-name>
+		<servlet-class>Logindb</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Logindb</servlet-name>
+		<url-pattern>/Logindb.com</url-pattern>
+	</servlet-mapping>
+	
+
+</web-app>
